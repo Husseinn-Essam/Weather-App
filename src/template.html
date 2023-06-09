@@ -7,29 +7,39 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <h1>Weather App</h1>
-  </header>
   <main>
-    <div class="weather-card">
-      <h2 class="location">Location</h2>
-      <div class="weather-info">
-        <div class="state">current state</div>
-        <div class="date">x/xx</div>
-        <div class="time">time</div>
-        <div class="temperature">
-          <span class="value">--</span>
-          <span class="unit">°C</span>
+    <div class="weather-app">
+      <div class="weather-card">
+        <h2 class="location">Location</h2>
+        <div class="weather-info">
+          <div class="state">Current State</div>
+          <div class="date">Date</div>
+          <div class="time">Time</div>
+          <div class="temperature">
+            <span class="value">--</span>
+            <span class="unit">°C</span>
+          </div>
+          <div class="feels-like">Feels Like: --°C</div>
+          <div class="humidity">Humidity: --%</div>
+          <div class="wind-speed">Wind Speed: -- km/h</div>
+          <div class="weather-svg">
+            <!-- Add SVG here -->
+          </div>
         </div>
-        <div class="description">--</div>
+        <div class="search-bar">
+          <input type="text" id="city-input" placeholder="Enter a city">
+          <button id="search-btn">Search</button>
+        </div>
       </div>
-      <div class="search-bar">
-        <input type="text" id="city-input" placeholder="Enter a city">
-        <button id="search-btn">Search</button>
+      
+      <div class="weather-data-cards">
+        <!-- Add weather data cards here -->
+        <div class="weather-data-card">
+          <!-- Card content -->
+        </div>
       </div>
     </div>
-    
   </main>
-
 </body>
 </html>
+
