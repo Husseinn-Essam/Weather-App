@@ -8,10 +8,10 @@ This is a weather app that displays real-time weather information for a given lo
 
 ## Features
 
-✨ Real-time weather updates
-✨ Dynamic background image based on weather condition
-✨ Temperature displayed in Celsius
-✨ Additional information such as humidity and wind speed
+- ✨ Real-time weather updates
+- ✨ Dynamic background image based on weather condition
+- ✨ Temperature displayed in Celsius
+- ✨ Additional information such as humidity and wind speed
 
 ## Technologies Used
 
