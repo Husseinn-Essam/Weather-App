@@ -1,12 +1,11 @@
-import './styles/main.scss';
-const searchBtn = document.getElementById('search-btn');
+import "./styles/main.scss";
+const searchBtn = document.getElementById("search-btn");
 
-searchBtn.addEventListener('click', () => {
-    let location = document.getElementById('city-input').value;
-    getWeather(location);
-  });
-  
-  
+searchBtn.addEventListener("click", () => {
+  let location = document.getElementById("city-input").value;
+  getWeather(location);
+});
+
 async function getWeather(location) {
   try {
     const weatherData = await fetchWeatherData(location);
@@ -37,12 +36,12 @@ async function getWeather(location) {
       document.body.style.backgroundImage = `url(${imageUrl})`;
     }
   } catch (error) {
-    console.log('Error:', error);
+    console.log("Error:", error);
   }
 }
 
 async function fetchWeatherData(location) {
-  const weatherApiKey = 'fe5bf2fd65fc420ea3c175649230906';
+  const weatherApiKey = "e69de3b98c1843d2bc683301232906";
   const weatherUrl = `https://api.weatherapi.com/v1/current.json?key=${weatherApiKey}&q=${encodeURIComponent(
     location
   )}`;
@@ -52,8 +51,8 @@ async function fetchWeatherData(location) {
 
 function extractWeatherData(weatherData) {
   const weatherCondition = weatherData.current.condition.text;
-  const localDate = weatherData.location.localtime.split(' ')[0];
-  const localTime = weatherData.location.localtime.split(' ')[1];
+  const localDate = weatherData.location.localtime.split(" ")[0];
+  const localTime = weatherData.location.localtime.split(" ")[1];
   const temperature = weatherData.current.temp_c;
   const feelsLike = weatherData.current.feelslike_c;
   const humidity = weatherData.current.humidity;
@@ -80,18 +79,22 @@ function updateWeatherInfo(
   humidity,
   windSpeed
 ) {
-  document.querySelector('.location').textContent = location;
-  document.querySelector('.state').textContent = weatherCondition;
-  document.querySelector('.date').textContent = localDate;
-  document.querySelector('.time').textContent = localTime;
-  document.querySelector('.temperature .value').textContent = temperature;
-  document.querySelector('.feels-like').textContent = `Feels Like: ${feelsLike}°C`;
-  document.querySelector('.humidity').textContent = `Humidity: ${humidity}%`;
-  document.querySelector('.wind-speed').textContent = `Wind Speed: ${windSpeed} km/h`;
+  document.querySelector(".location").textContent = location;
+  document.querySelector(".state").textContent = weatherCondition;
+  document.querySelector(".date").textContent = localDate;
+  document.querySelector(".time").textContent = localTime;
+  document.querySelector(".temperature .value").textContent = temperature;
+  document.querySelector(
+    ".feels-like"
+  ).textContent = `Feels Like: ${feelsLike}°C`;
+  document.querySelector(".humidity").textContent = `Humidity: ${humidity}%`;
+  document.querySelector(
+    ".wind-speed"
+  ).textContent = `Wind Speed: ${windSpeed} km/h`;
 }
 
 async function fetchBackgroundImage(weatherCondition) {
-  const pixabayApiKey = '33206537-0633c0c38beb775155d06f2a1';
+  const pixabayApiKey = "33206537-0633c0c38beb775155d06f2a1";
   const pixabayUrl = `https://pixabay.com/api/?key=${pixabayApiKey}&q=${encodeURIComponent(
     `${weatherCondition} weather`
   )}&image_type=photo&category=nature`;
@@ -105,4 +108,4 @@ async function fetchBackgroundImage(weatherCondition) {
 }
 
 // Default call
-getWeather('Cairo');
+getWeather("Cairo");
